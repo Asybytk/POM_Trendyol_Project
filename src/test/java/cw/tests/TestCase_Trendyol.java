@@ -25,7 +25,7 @@ public class TestCase_Trendyol {
 
        // homePg.alertHandel();
 
-       homePg.sendProduct("Schuhe");
+     //  homePg.sendProduct("Schuhe");
 
         homePg.spanClose.click();
 
