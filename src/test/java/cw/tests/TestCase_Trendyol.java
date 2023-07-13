@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 public class TestCase_Trendyol {
 
-
     //POM framework kurun
     //Trendyola gidin
     //herhangi bir ürünü arayin
@@ -26,7 +25,7 @@ public class TestCase_Trendyol {
 
        // homePg.alertHandel();
 
-     //  homePg.sendProduct("Schuhe");
+         //  homePg.sendProduct("Schuhe");
 
         homePg.spanClose.click();
 
