@@ -35,7 +35,6 @@ public void addWarenKorb(){
     WarenKorb.click();
 }
 
-
         //alerti kapatmak icin
     public void alertHandel(){
         Driver.getDriver().switchTo().alert().dismiss();
