@@ -33,6 +33,7 @@ public void sendProduct(String key){
 
 public void addWarenKorb(){
     WarenKorb.click();
+
 }
 
         //alerti kapatmak icin
