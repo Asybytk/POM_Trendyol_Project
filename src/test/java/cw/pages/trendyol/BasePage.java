@@ -29,6 +29,7 @@ public WebElement spanClose;
 
 public void sendProduct(String key){
     searchArea.sendKeys(key+ Keys.ENTER);
+
 }
 
 public void addWarenKorb(){
