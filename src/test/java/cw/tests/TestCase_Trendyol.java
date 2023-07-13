@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class TestCase_Trendyol {
 
+
     //POM framework kurun
     //Trendyola gidin
     //herhangi bir ürünü arayin
