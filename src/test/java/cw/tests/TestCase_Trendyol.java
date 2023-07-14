@@ -1,6 +1,8 @@
 package cw.tests;
 
+import cw.pages.trendyol.BasePage;
 import cw.pages.trendyol.HomePage;
+import cw.pages.trendyol.ProductPage;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
 import org.testng.annotations.Test;
@@ -23,11 +25,15 @@ public class TestCase_Trendyol {
         HomePage  homePg = new HomePage();
         homePg.cookie.click();
 
+        BasePage searchPrd = new BasePage();
+        searchPrd.sendProduct("Kleidung");
+
        // homePg.alertHandel();
 
-         //  homePg.sendProduct("Schuhe");
+        ProductPage product = new ProductPage();
+        product.WarenKorb.click();
 
-        homePg.spanClose.click();
+       // homePg.spanClose.click();
 
 
 

@@ -39,7 +39,8 @@ public void addWarenKorb(){
 
         //alerti kapatmak icin
     public void alertHandel(){
-        Driver.getDriver().switchTo().alert().dismiss();
+
+    Driver.getDriver().switchTo().alert().dismiss();
     }
 
 }
