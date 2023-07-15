@@ -17,25 +17,25 @@ public class TestCase_Trendyol {
     //sepete eklediginiz urununun göründügünü test ediniz
 
     @Test
-    public  void trendyolTest(){
+    public void trendyolTest() {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("trenyolUrl"));
 
 
-        HomePage  homePg = new HomePage();
-        homePg.cookie.click();
+        BasePage bp = new BasePage();
+        bp.cookie.click();
 
-        BasePage searchPrd = new BasePage();
-        searchPrd.sendProduct("Kleidung");
 
-       // homePg.alertHandel();
+
+        BasePage searchPrdkt = new BasePage();
+        searchPrdkt.sendProduct("Kleidung");
+
+        searchPrdkt.alertHandel();
 
         ProductPage product = new ProductPage();
         product.WarenKorb.click();
 
-       // homePg.spanClose.click();
-
-
+        // homePg.spanClose.click();
 
 
     }

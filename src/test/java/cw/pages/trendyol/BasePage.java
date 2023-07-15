@@ -1,6 +1,7 @@
 package cw.pages.trendyol;
 
 import cw.utilities.Driver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,7 @@ public class BasePage {
 
 
     public BasePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
@@ -18,29 +19,29 @@ public class BasePage {
     public WebElement cookie;
 
 
-    @FindBy(xpath = "//*[@data-testid='search-bar-icon']")
+    @FindBy(xpath = "//div[@data-testid='header-search-bar-wrapper']")
     public WebElement searchArea;
 
-@FindBy(xpath = "//img[@class='basket-icon']")
-   public WebElement WarenKorb;
+    @FindBy(xpath = "//img[@class='basket-icon']")
+    public WebElement WarenKorb;
 
-@FindBy(xpath = "//span[@class='p-icon icon-close close-icon']")
-public WebElement spanClose;
+//    @FindBy(xpath = "//span[@class='p-icon icon-close close-icon']")
+//    public WebElement spanClose;
 
-public void sendProduct(String key){
-    searchArea.sendKeys(key+ Keys.ENTER);
+    public void sendProduct(String key) {
+        searchArea.sendKeys(key + Keys.ENTER);
 
-}
+    }
 
-public void addWarenKorb(){
-    WarenKorb.click();
+    public void addWarenKorb() {
+        WarenKorb.click();
 
-}
+    }
 
-        //alerti kapatmak icin
-    public void alertHandel(){
-
-    Driver.getDriver().switchTo().alert().dismiss();
+    //alerti kapatmak icin
+    public void alertHandel() {
+        Alert alert = Driver.getDriver().switchTo().alert();
+        alert.dismiss();
     }
 
 }
