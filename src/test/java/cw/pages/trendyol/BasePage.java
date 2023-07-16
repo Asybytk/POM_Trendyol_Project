@@ -11,6 +11,7 @@ public class BasePage {
 
 
     public BasePage() {
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -19,29 +20,36 @@ public class BasePage {
     public WebElement cookie;
 
 
-    @FindBy(xpath = "//div[@data-testid='header-search-bar-wrapper']")
+    //@FindBy(xpath = "//div[@data-testid='header-search-bar-wrapper']")
+    @FindBy(xpath = "(//input[@type='text'])[1]")
     public WebElement searchArea;
 
-    @FindBy(xpath = "//img[@class='basket-icon']")
-    public WebElement WarenKorb;
 
-//    @FindBy(xpath = "//span[@class='p-icon icon-close close-icon']")
-//    public WebElement spanClose;
+    @FindBy(xpath = "//span[@class='p-icon icon-close close-icon']")
+    public WebElement spanClose;
+
+
+
+
+
+
+
+
+
 
     public void sendProduct(String key) {
         searchArea.sendKeys(key + Keys.ENTER);
 
     }
 
-    public void addWarenKorb() {
-        WarenKorb.click();
-
-    }
 
     //alerti kapatmak icin
     public void alertHandel() {
-        Alert alert = Driver.getDriver().switchTo().alert();
-        alert.dismiss();
+        Alert alertHnd = Driver.getDriver().switchTo().alert();
+        alertHnd.dismiss();
     }
 
+    public  void spanClose(){
+        spanClose.click();
+    }
 }
