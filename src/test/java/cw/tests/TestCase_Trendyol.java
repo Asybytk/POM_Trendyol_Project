@@ -1,9 +1,9 @@
 package cw.tests;
 
-import cw.pages.trendyol.BasePage;
-import cw.pages.trendyol.SearchPage;
+import cw.pages.trendyol.TrendyolBasePage;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestCase_Trendyol {
@@ -25,41 +25,31 @@ Test the product you added to the cart
      */
 
     @Test
-    public void trendyolTest() throws InterruptedException {
+    public void test() throws InterruptedException {
+        Driver.getDriver().get(ConfigurationReader.getProperty("trendyolUrl"));
+        TrendyolBasePage tbp = new TrendyolBasePage();
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("trenyolUrl"));
-
-        BasePage basePg= new BasePage();
-        basePg.cookie.click();
-
-       Thread.sleep(5000);
-
-        basePg.sendProduct("Tom Tailor");
-
+        tbp.cookie.click();
         Thread.sleep(5000);
 
-       // basePg.alertHandel();
-
-       basePg.spanClose();
-
+        tbp.sendProduct("Hose");
         Thread.sleep(5000);
 
-
-
-        SearchPage sp = new SearchPage();
-        sp.kostenlosVerstandButton(4);
-
+        tbp.spanClose();
         Thread.sleep(5000);
 
-        SearchPage wk= new SearchPage();
-        wk.warenKorbAdd();
-
+        tbp.hose.click();
         Thread.sleep(5000);
 
-       // sp.markeIsDisplay();
-
+        tbp.warenKorb.click();
         Thread.sleep(5000);
 
+       tbp.warenKorbDisplay.click();
+
+        tbp.warenKorbVoll.click();
+        Assert.assertTrue(tbp.warenKorbVoll.isDisplayed());
     }
+
 }
+
 
